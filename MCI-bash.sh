@@ -1,8 +1,8 @@
 #!/bin/bash
-clear
-sudo apt-get install curl -y
-sudo apt-get install ipset -y
-sudo apt-get install iptables-persistent -y
+sudo clear
+sudo apt install curl -y
+sudo apt install ipset -y
+sudo apt install iptables-persistent -y
 sudo iptables -F
 sudo ipset destroy
 sudo ipset create MCI hash:net
@@ -15,10 +15,10 @@ sudo iptables -A INPUT -m set --match-set MCI src -j ACCEPT
 sudo iptables -A OUTPUT -m set --match-set iranipv4 src -j DROP
 sudo ip6tables -A OUTPUT -m set --match-set iranipv6 src -j DROP
 sudo iptables -A INPUT -j DROP
-iptables-save > /etc/iptables/rules.v4
-iptables-save > /etc/iptables/rules.v6
+sudo iptables-save > /etc/iptables/rules.v4
+sudo iptables-save > /etc/iptables/rules.v6
 sudo systemctl enable iptables
 sudo systemctl start iptables
 sudo systemctl is-enabled netfilter-persistent.service
-clear 
+sudo clear 
 echo "Success , Blocked Iran IP :)"
