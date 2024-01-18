@@ -1,7 +1,9 @@
 #!/bin/bash
-sudo apt install curl -y
-sudo apt install ipset -y
-sudo apt install iptables-persistent -y
+clear
+sudo apt-get update
+sudo apt-get install curl
+sudo apt-get install ipset
+sudo apt-get install iptables-persistent
 sudo iptables -F
 sudo ipset destroy
 sudo ipset create MCI hash:net
