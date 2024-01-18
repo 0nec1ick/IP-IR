@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 sudo clear
 sudo apt install curl -y
 sudo apt install ipset -y
