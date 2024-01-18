@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "Welcome"
-clear
 sudo apt install curl -y
 sudo apt install ipset -y
 sudo apt install iptables-persistent -y
