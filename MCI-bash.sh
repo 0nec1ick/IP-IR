@@ -1,5 +1,6 @@
-#!/usr/bin/env bash
-sudo clear
+#!/bin/bash
+echo "Welcome"
+clear
 sudo apt install curl -y
 sudo apt install ipset -y
 sudo apt install iptables-persistent -y
@@ -20,5 +21,5 @@ sudo iptables-save > /etc/iptables/rules.v6
 sudo systemctl enable iptables
 sudo systemctl start iptables
 sudo systemctl is-enabled netfilter-persistent.service
-sudo clear 
+clear 
 echo "Success , Blocked Iran IP :)"
