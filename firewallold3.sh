@@ -25,7 +25,7 @@ sudo ufw deny out from any to $line
 clear
 echo "Iran IP Blocking ( List 2 ) : $line_number / $allcount "
 done
-url="https://raw.githubusercontent.com/0nec1ick/IP-IR/main/FullIR.txt"
+url="https://raw.githubusercontent.com/HamedAp/Ssh-User-management/main/i.txt"
 allcount=$(curl -s "$url" | wc -l)
 curl -s "$url" | while IFS= read -r line; do
 ((++line_number))
