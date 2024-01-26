@@ -12,3 +12,4 @@ clear
 echo "Iran IP Blocking ( List 1 ) : $line_number / $allcount "
 done
 sudo iptables-save | sudo tee /etc/iptables/rules.v4
+sudo ip6tables-save | sudo tee /etc/iptables/rules.v6
