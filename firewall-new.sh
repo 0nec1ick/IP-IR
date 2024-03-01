@@ -8,6 +8,14 @@ echo "==========================================================================
 sleep 5
 clear
 sudo apt update -y
+sudo apt remove --purge ufw  -y
+sudo apt remove --purge curl unzip perl libtext-csv-xs-perl libmoosex-types-netaddr-ip-perl iptables-persistent ipset -y 
+echo "======================================================================================================="
+echo "Unistall Successfull"
+echo "======================================================================================================="
+sleep 5
+clear
+sudo apt update -y
 sudo apt install ufw  -y
 sudo apt install curl unzip perl libtext-csv-xs-perl libmoosex-types-netaddr-ip-perl iptables-persistent ipset -y 
 echo "======================================================================================================="
@@ -18,7 +26,8 @@ sudo wget -4 -O /root/i.txt https://raw.githubusercontent.com/0nec1ick/IP-IR/mai
 wait
 
 iptables -F
-
+ipset flush shahaniran
+ipset destroy shahaniran
 ipset create shahaniran hash:net
 ipset flush shahaniran
 while read line; do ipset add shahaniran $line; done < /root/i.txt
@@ -31,6 +40,8 @@ echo "==========================================================================
 echo "IPTable Block Iran IP Successfull"
 echo "======================================================================================================="
 sleep 5
+
+ufw disable
 
 sudo wget -4 -O /etc/ufw/user.rules https://raw.githubusercontent.com/0nec1ick/IP-IR/main/user.rules &
 wait
