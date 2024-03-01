@@ -15,6 +15,7 @@ echo "Unistall Successfull"
 echo "======================================================================================================="
 sleep 5
 clear
+sudo apt update -y
 sudo apt install ufw  -y
 sudo apt install curl unzip perl libtext-csv-xs-perl libmoosex-types-netaddr-ip-perl iptables-persistent ipset -y 
 echo "======================================================================================================="
