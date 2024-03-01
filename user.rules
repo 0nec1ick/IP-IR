@@ -84288,7 +84288,7 @@
 -A ufw-user-input -d 217.60.128.0/18 -j DROP
 
 ### tuple ### allow tcp 56777 0.0.0.0/0 any 0.0.0.0/0 in
--A ufw-user-input -p tcp --dport 7300 -j ACCEPT
+-A ufw-user-input -p tcp --dport 56777 -j ACCEPT
 
 ### tuple ### allow tcp 7300 0.0.0.0/0 any 0.0.0.0/0 in
 -A ufw-user-input -p tcp --dport 7300 -j ACCEPT
