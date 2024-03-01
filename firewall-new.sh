@@ -45,6 +45,8 @@ ufw disable
 sudo wget -4 -O /etc/ufw/user.rules https://raw.githubusercontent.com/0nec1ick/IP-IR/main/user.rules &
 wait
 
+sudo ufw allow 56777/tcp
+sudo ufw allow 14000/tcp
 ufw enable
 echo "======================================================================================================="
 echo "UFW Block Iran IP Successfull"
