@@ -7,7 +7,7 @@ sleep 5
 clear
 sudo apt update -y
 sudo apt install ufw  -y
-sudo apt install curl unzip perl xtables-addons-common libtext-csv-xs-perl libmoosex-types-netaddr-ip-perl iptables-persistent ipset -y 
+sudo apt install curl unzip perl libtext-csv-xs-perl libmoosex-types-netaddr-ip-perl iptables-persistent ipset -y 
 echo "Install Successfull"
 sleep 5
 sudo wget -4 -O /root/i.txt https://raw.githubusercontent.com/0nec1ick/IP-IR/main/i.txt &
