@@ -21,7 +21,8 @@ while read line; do ipset add shahaniran $line; done < /root/i.txt
 #iptables -A OUTPUT -m set --match-set shahaniran src -j DROP
 iptables -A OUTPUT -p tcp --dport 443 -m set --match-set shahaniran dst -j DROP
 iptables -A OUTPUT -p tcp --dport 80 -m set --match-set shahaniran dst -j DROP
-sudo iptables-save | sudo tee /etc/iptables/rules.v4
+sudo iptables-save > /etc/iptables/rules.v4
+sudo ip6tables-save > /etc/iptables/rules.v6
 echo "IPTable Block Iran IP Successfull"
 sleep 5
 
