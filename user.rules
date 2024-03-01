@@ -81962,12 +81962,6 @@
 ### tuple ### deny any any 62.60.161.0/24 any 0.0.0.0/0 out
 -A ufw-user-output -d 62.60.161.0/24 -j DROP
 
-### tuple ### allow tcp 7575 0.0.0.0/0 any 0.0.0.0/0 in
--A ufw-user-input -p tcp --dport 7575 -j ACCEPT
-
-### tuple ### allow tcp 14000 0.0.0.0/0 any 0.0.0.0/0 in
--A ufw-user-input -p tcp --dport 14000 -j ACCEPT
-
 ### tuple ### deny any any 2.188.32.0/21 any 0.0.0.0/0 in
 -A ufw-user-input -d 2.188.32.0/21 -j DROP
 
@@ -84286,15 +84280,6 @@
 
 ### tuple ### deny any any 217.60.128.0/18 any 0.0.0.0/0 in
 -A ufw-user-input -d 217.60.128.0/18 -j DROP
-
-### tuple ### allow tcp 56777 0.0.0.0/0 any 0.0.0.0/0 in
--A ufw-user-input -p tcp --dport 56777 -j ACCEPT
-
-### tuple ### allow tcp 7300 0.0.0.0/0 any 0.0.0.0/0 in
--A ufw-user-input -p tcp --dport 7300 -j ACCEPT
-
-### tuple ### allow udp 7300 0.0.0.0/0 any 0.0.0.0/0 in
--A ufw-user-input -p udp --dport 7300 -j ACCEPT
 
 ### END RULES ###
 
