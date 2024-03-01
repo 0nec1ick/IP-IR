@@ -24,6 +24,7 @@ iptables -A OUTPUT -p tcp --dport 80 -m set --match-set shahaniran dst -j DROP
 sudo iptables-save | sudo tee /etc/iptables/rules.v4
 sudo iptables-save > /etc/iptables/rules.v4
 sudo ip6tables-save > /etc/iptables/rules.v6
+ipset list
 echo "IPTable Block Iran IP Successfull"
 sleep 5
 
