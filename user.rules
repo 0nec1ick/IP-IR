@@ -84281,6 +84281,36 @@
 ### tuple ### deny any any 217.60.128.0/18 any 0.0.0.0/0 in
 -A ufw-user-input -d 217.60.128.0/18 -j DROP
 
+### tuple ### deny any any 10.0.0.0/8 any 0.0.0.0/0 in
+-A ufw-user-input -d 10.0.0.0/8 -j DROP
+
+### tuple ### deny any any 172.16.0.0/12 any 0.0.0.0/0 in
+-A ufw-user-input -d 172.16.0.0/12 -j DROP
+
+### tuple ### deny any any 192.168.0.0/16 any 0.0.0.0/0 in
+-A ufw-user-input -d 192.168.0.0/16 -j DROP
+
+### tuple ### deny any any 100.64.0.0/10 any 0.0.0.0/0 in
+-A ufw-user-input -d 100.64.0.0/10 -j DROP
+
+### tuple ### deny any any 198.18.0.0/15 any 0.0.0.0/0 in
+-A ufw-user-input -d 198.18.0.0/15 -j DROP
+
+### tuple ### deny any any 169.254.0.0/16 any 0.0.0.0/0 in
+-A ufw-user-input -d 169.254.0.0/16 -j DROP
+
+### tuple ### deny any any 141.101.78.0/23 any 0.0.0.0/0 in
+-A ufw-user-input -d 141.101.78.0/23 -j DROP
+
+### tuple ### deny any any 173.245.48.0/20 any 0.0.0.0/0 in
+-A ufw-user-input -d 173.245.48.0/20 -j DROP
+
+### tuple ### deny any any 141.101.0.0/16 any 0.0.0.0/0 in
+-A ufw-user-input -d 141.101.0.0/16 -j DROP
+
+### tuple ### deny any any 173.245.0.0/16 any 0.0.0.0/0 in
+-A ufw-user-input -d 173.245.0.0/16 -j DROP
+
 ### END RULES ###
 
 ### LOGGING ###
