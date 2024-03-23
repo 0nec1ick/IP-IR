@@ -50,6 +50,9 @@ sudo ufw allow 56777/tcp
 sudo ufw allow 7575/tcp
 sudo ufw allow 7676/tcp
 sudo ufw allow 7676/udp
+
+sudo systemctl enable ufw
+sudo ufw enable
 ufw enable
 echo "======================================================================================================="
 echo "UFW Block Iran IP Successfull"
