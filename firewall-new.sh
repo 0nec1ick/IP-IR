@@ -32,9 +32,6 @@ ipset create shahaniran hash:net
 ipset flush shahaniran
 while read line; do ipset add shahaniran $line; done < /root/i.txt
 #iptables -A OUTPUT -m set --match-set shahaniran src -j DROP
-iptables -I INPUT -p tcp --dport 2275 -m set --match-set shahaniran src -j DROP
-iptables -I INPUT -p tcp --dport 443 -m set --match-set shahaniran src -j DROP
-iptables -I INPUT -p tcp --dport 80 -m set --match-set shahaniran src -j DROP
 iptables -A OUTPUT -p tcp --dport 2275 -m set --match-set shahaniran dst -j DROP
 iptables -A OUTPUT -p tcp --dport 443 -m set --match-set shahaniran dst -j DROP
 iptables -A OUTPUT -p tcp --dport 80 -m set --match-set shahaniran dst -j DROP
