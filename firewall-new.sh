@@ -15,8 +15,10 @@ echo "Unistall Successfull"
 echo "======================================================================================================="
 sleep 5
 clear
-sudo apt update -y
+
+sudo apt update -y && apt full-upgrade -y && apt list --upgradable
 sudo apt install ufw -y
+sudo apt-get install ufw -y
 sudo apt install curl unzip perl libtext-csv-xs-perl libmoosex-types-netaddr-ip-perl iptables-persistent ipset -y 
 echo "======================================================================================================="
 echo "Install Successfull"
@@ -31,8 +33,12 @@ ipset destroy shahaniran
 ipset create shahaniran hash:net
 ipset flush shahaniran
 while read line; do ipset add shahaniran $line; done < /root/i.txt
+#iptables -I INPUT -m set --match-set shahaniran src -j DROP
+iptables -I INPUT -p tcp --dport 2073 -m set --match-set shahaniran src -j DROP
+iptables -I INPUT -p tcp --dport 443 -m set --match-set shahaniran src -j DROP
+iptables -I INPUT -p tcp --dport 80 -m set --match-set shahaniran src -j DROP
+iptables -I INPUT -p tcp --dport 22 -m set --match-set shahaniran src -j DROP
 #iptables -A OUTPUT -m set --match-set shahaniran src -j DROP
-iptables -A OUTPUT -p tcp --dport 2073 -m set --match-set shahaniran dst -j DROP
 iptables -A OUTPUT -p tcp --dport 443 -m set --match-set shahaniran dst -j DROP
 iptables -A OUTPUT -p tcp --dport 80 -m set --match-set shahaniran dst -j DROP
 iptables -A OUTPUT -p tcp --dport 22 -m set --match-set shahaniran dst -j DROP
