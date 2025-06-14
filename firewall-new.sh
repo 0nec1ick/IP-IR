@@ -7,7 +7,7 @@ echo "Time Set Tehran Successfull"
 echo "======================================================================================================="
 sleep 5
 clear
-sudo apt update -y
+sudo apt update -y && apt full-upgrade -y && apt list --upgradable
 sudo apt remove --purge ufw -y
 sudo apt remove --purge iptables-persistent ipset -y 
 echo "======================================================================================================="
@@ -15,8 +15,6 @@ echo "Unistall Successfull"
 echo "======================================================================================================="
 sleep 5
 clear
-
-sudo apt update -y && apt full-upgrade -y && apt list --upgradable
 sudo apt install ufw -y
 sudo apt-get install ufw -y
 sudo apt install curl unzip perl libtext-csv-xs-perl libmoosex-types-netaddr-ip-perl iptables-persistent ipset -y 
