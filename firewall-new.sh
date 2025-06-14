@@ -34,8 +34,6 @@ while read line; do ipset add shahaniran $line; done < /root/i.txt
 #iptables -A OUTPUT -m set --match-set shahaniran src -j DROP
 iptables -I INPUT -m set --match-set shahaniran src -j DROP
 iptables -P INPUT ACCEPT
-iptables -A OUTPUT -p tcp --dport 56777 -m set --match-set shahaniran dst -j DROP
-iptables -A OUTPUT -p tcp --dport 2275 -m set --match-set shahaniran dst -j DROP
 iptables -A OUTPUT -p tcp --dport 443 -m set --match-set shahaniran dst -j DROP
 iptables -A OUTPUT -p tcp --dport 80 -m set --match-set shahaniran dst -j DROP
 iptables -A OUTPUT -p tcp --dport 22 -m set --match-set shahaniran dst -j DROP
