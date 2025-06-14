@@ -47,9 +47,7 @@ sudo wget -4 -O /etc/ufw/user.rules https://raw.githubusercontent.com/0nec1ick/I
 wait
 
 sudo ufw allow 56777/tcp
-sudo ufw allow 7575/tcp
-sudo ufw allow 7676/tcp
-sudo ufw allow 7676/udp
+sudo ufw allow 2275/tcp
 
 sudo systemctl enable ufw
 sudo ufw enable
